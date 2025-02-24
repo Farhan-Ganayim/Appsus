@@ -49,7 +49,7 @@ function save(mail) {
 
 function getDefaultFilter() {
     return {
-        status: 'inbox',
+        status: '',
         txt: '',
         isRead: undefined,
         // isStared: undefined,
@@ -58,28 +58,30 @@ function getDefaultFilter() {
 }
 
 function filter(mails, filterBy) {
-    // if (filterBy.txt) {
-    //     const regExp = new RegExp(filterBy.txt, 'i')
-    //     mails = mails.filter(mail => regExp.test(mail.subject) || regExp.test(mail.body))
-    // }
-    // if (filterBy.isRead !== undefined) {
-    //     mails = mails.filter(mail => mail.isRead === filterBy.isRead)
-    // }
+    if (filterBy.txt) {
+        const regExp = new RegExp(filterBy.txt, 'i')
+        mails = mails.filter(mail => regExp.test(mail.subject) || regExp.test(mail.body))
+    }
+    if (filterBy.isRead !== undefined) {
+        mails = mails.filter(mail => mail.isRead === filterBy.isRead)
+    }
 
-    // switch (filterBy.status) {
-    //     case 'inbox':
-    //         mails = mails.filter(mail => mail.to === loggedinUser.email && !mail.removedAt && mail.sentAt)
-    //         break
-    //     case 'sent':
-    //         mails = mails.filter(mail => mail.from === loggedinUser.email && mail.sentAt)
-    //         break
-    //     case 'drafts':
-    //         mails = mails.filter(mail => !mail.sentAt)
-    //         break
-    //     case 'trash':
-    //         mails = mails.filter(mail => mail.removedAt)
-    //         break
-    // }
+    switch (filterBy.status) {
+        case 'inbox':
+            mails = mails.filter(mail => mail.to === loggedinUser.email && !mail.removedAt && mail.sentAt)
+            break
+        case 'sent':
+            mails = mails.filter(mail => mail.from === loggedinUser.email && mail.sentAt)
+            break
+        case 'drafts':
+            mails = mails.filter(mail => !mail.sentAt)
+            break
+        case 'trash':
+            mails = mails.filter(mail => mail.removedAt)
+            break
+    }
+    console.log('after filter',filterBy,mails);
+    
     return mails
 }
 
@@ -146,8 +148,8 @@ function _createDemoMails() {
             {
                 id: utilService.makeId(),
                 createdAt: 1740010949176,
-                subject: 'Miss you',
-                body: 'Would love to catch up sometimes',
+                subject: 'Final sale',
+                body: 'Big winter sale in our shops around the',
                 isRead: true,
                 sentAt: 1740010969176,
                 removedAt: null,
