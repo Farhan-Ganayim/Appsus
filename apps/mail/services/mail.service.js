@@ -24,7 +24,7 @@ function query(filterBy) {
     return storageService.query(MAIL_KEY)
         .then(mails => {
             // console.log(mails)
-            
+
             mails = filter(mails, filterBy)
             return mails
         })
@@ -52,7 +52,7 @@ function getDefaultFilter() {
         status: '',
         txt: '',
         isRead: undefined,
-        // isStared: undefined,
+        isStarred: undefined,
         labels: []
     }
 }
@@ -80,8 +80,8 @@ function filter(mails, filterBy) {
             mails = mails.filter(mail => mail.removedAt)
             break
     }
-    console.log('after filter',filterBy,mails);
-    
+    console.log('after filter', filterBy, mails);
+
     return mails
 }
 
@@ -96,6 +96,7 @@ function _createDemoMails() {
                 subject: 'Miss you',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
+                isStarred: false,
                 sentAt: 1551133930594,
                 removedAt: null,
                 from: 'momo@momo.com',
@@ -107,6 +108,7 @@ function _createDemoMails() {
                 subject: 'Hi there',
                 body: 'Can I ask you something',
                 isRead: true,
+                isStarred: false,
                 sentAt: 1739644875124,
                 removedAt: 1739694875124,
                 from: 'user@appsus.com',
@@ -118,6 +120,7 @@ function _createDemoMails() {
                 subject: 'Your invoice',
                 body: 'You can download your invoice from our site',
                 isRead: false,
+                isStarred: false,
                 sentAt: 1739644875124,
                 removedAt: null,
                 from: 'user@appsus.com',
@@ -129,6 +132,7 @@ function _createDemoMails() {
                 subject: 'Please call me',
                 body: 'Tried to call you and you didnt',
                 isRead: false,
+                isStarred: false,
                 sentAt: null,
                 removedAt: null,
                 from: 'user@appsus.com',
@@ -140,7 +144,8 @@ function _createDemoMails() {
                 subject: 'Order sent',
                 body: 'Your odrer is on way to your',
                 isRead: true,
-                sentAt: 1551133940594,
+                isStarred: false,
+                sentAt: 1556133940594,
                 removedAt: 1551138940594,
                 from: 'wolverine@momo.com',
                 to: 'user@appsus.com'
@@ -151,7 +156,8 @@ function _createDemoMails() {
                 subject: 'Final sale',
                 body: 'Big winter sale in our shops around the',
                 isRead: true,
-                sentAt: 1740010969176,
+                isStarred: false,
+                sentAt: 1730010969176,
                 removedAt: null,
                 from: 'batman@momo.com',
                 to: 'user@appsus.com'

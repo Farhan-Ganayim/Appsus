@@ -21,10 +21,11 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
     return (
         <section className="mail-filter-container">
             <form >
-                <label htmlFor="searchTxt">Search</label>
+                <label htmlFor="searchTxt"></label>
                 <input
                     id="searchTxt"
                     type="text"
+                    placeholder="Search"
                     name="txt"
                     value={filterByToEdit.txt}
                     onChange={onHandleChange}
