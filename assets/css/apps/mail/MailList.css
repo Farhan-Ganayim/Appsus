@@ -4,11 +4,14 @@
     .mail-table {
         place-self: center;
         width: 70vw;
+        border-collapse: collapse;
         background-color: rgb(231, 236, 238);
-
+        th{
+            padding:.5em;
+        }
 
         tr {
-            border-bottom: 1px solid rgb(221, 217, 217);
+            border-bottom: 1px solid rgb(223, 219, 219);
 
             td {
                 padding: .5em;
@@ -37,8 +40,8 @@
 }
 
 .stars-col {
-    width: 2em;
-    .star-icon{
+
+    .star-icon {
         font-size: 1.4em;
     }
 

@@ -92,12 +92,12 @@ function _createDemoMails() {
         mails = [
             {
                 id: utilService.makeId(),
-                createdAt: 1551133930500,
+                createdAt: 1738531200000,
                 subject: 'Miss you',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 isStarred: false,
-                sentAt: 1551133930594,
+                sentAt: 1738531202000,
                 removedAt: null,
                 from: 'momo@momo.com',
                 to: 'user@appsus.com'

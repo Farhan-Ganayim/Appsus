@@ -1,4 +1,5 @@
 const { useState } = React
+import { utilService } from "../../../services/util.service.js"
 
 export function MailPreview({ mail }) {
 
@@ -41,7 +42,7 @@ export function MailPreview({ mail }) {
             </td>
             <td className="subject-col flex">
                 <span className="mail-subject">{mail.subject}...</span>  
-                <span className="mail-body">{mail.body}</span> 
+                <span className="mail-body">{mail.body} {utilService.makeLorem(5)}</span> 
             </td>
             <td className="date-col">
                 {getDate(mail.sentAt)}
