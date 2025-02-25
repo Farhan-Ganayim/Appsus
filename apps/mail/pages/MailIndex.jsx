@@ -1,5 +1,7 @@
 
 const { useEffect, useState } = React
+// const [searchParams, setSearchParams] = useSearchParams()
+
 import { MailFilter } from "../cmps/MailFilter.jsx"
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
