@@ -8,20 +8,22 @@ export function MailPreview({ mail }) {
     console.log(mail)
     const [isStarred, setIsStarred] = useState(mail.isStarred || false)
 
-    function getDate(timeStamp) {
-        const date = new Date(timeStamp)
-        const day = date.getDate()
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        const month = months[date.getMonth()]
-        const year = date.getFullYear()
-        const currYear = new Date().getFullYear()
-        console.log(year)
-        console.log("currYear", currYear)
-        if (year !== currYear)
-            return year
-        else return `${month} ${day}`
+    // function getDate(timeStamp) {
+    //     const date = new Date(timeStamp)
+    //     const day = date.getDate()
+    //     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    //     const month = months[date.getMonth()]
+    //     const year = date.getFullYear()
+    //     const currYear = new Date().getFullYear()
+    //     console.log(year)
+    //     console.log("currYear", currYear)
+    //     if (year !== currYear)
+    //         return year
+    //     else return `${month} ${day}`
 
-    }
+    // }
+
+    const dateFormatted=utilService.getFormattedDate(mail.sentAt)
     // console.log(getDate(1551103930500))
 
     function onToggleStarred(ev) {
@@ -52,7 +54,7 @@ export function MailPreview({ mail }) {
                 </Link>
             </td>
             <td className="date-col">
-                {getDate(mail.sentAt)}
+                {dateFormatted}
             </td>
         </tr>
     )

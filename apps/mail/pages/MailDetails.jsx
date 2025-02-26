@@ -41,14 +41,23 @@ export function MailDetails() {
 
     return (
         <section className="mail-details">
-            <header className="mail-header">
+            <header className="mail-header flex">
                 <h3 className="mail-subject">{subject}</h3>
-                <button onClick={() => navigate('/mail')}>Back</button>
-                <button onClick={() => OnRemoveMail()}>Delete</button>
+                <section className="mail-action-btns flex">
+
+                    <button onClick={() => navigate('/mail')}>
+                        <img src="../../../assets/img/back.png" alt="Back to mails" />
+                    </button>
+                    <button onClick={() => OnRemoveMail()}>
+                        <img src="../../../assets/img/delete-icon.png" alt="Delete mail" />
+                    </button>
+                </section>
             </header>
             <p><span>From: </span>{from}</p>
-            <p><span>to: </span>{to}</p>
-            <p><span>Sent at: </span>{sentAt}</p>
+            <div className="mail-sent-info flex space-between">
+                <p><span>to: </span>{to}</p>
+                <p><span>Sent at: </span>{utilService.getFormattedDate(sentAt)}</p>
+            </div>
             <div className="mail-body">
                 <p>{body} {utilService.makeLorem(40)}</p>
             </div>
