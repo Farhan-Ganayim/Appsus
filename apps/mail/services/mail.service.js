@@ -17,7 +17,8 @@ export const mailService = {
     getDefaultFilter,
     getById,
     remove,
-    save
+    save,
+    getShortBody
 }
 
 function query(filterBy) {
@@ -57,6 +58,14 @@ function getDefaultFilter() {
     }
 }
 
+function getShortBody(Text, length = 12) {
+    const words = Text.split(' ')
+    const shortBody = words.slice(0, length).join(' ')
+    return shortBody
+}
+
+
+
 function filter(mails, filterBy) {
     if (filterBy.txt) {
         const regExp = new RegExp(filterBy.txt, 'i')
@@ -94,7 +103,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1738531200000,
                 subject: 'Miss you',
-                body: 'Would love to catch up sometimes',
+                body: 'Would love to catch up sometimes' + utilService.makeLorem(30),
                 isRead: false,
                 isStarred: false,
                 sentAt: 1738531202000,
@@ -106,7 +115,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1739644865124,
                 subject: 'Hi there',
-                body: 'Can I ask you something',
+                body: 'Can I ask you something' + utilService.makeLorem(30),
                 isRead: true,
                 isStarred: false,
                 sentAt: 1739644875124,
@@ -118,7 +127,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1739643875124,
                 subject: 'Your invoice',
-                body: 'You can download your invoice from our site',
+                body: 'You can download your invoice from our site' + utilService.makeLorem(30),
                 isRead: false,
                 isStarred: false,
                 sentAt: 1739644875124,
@@ -130,7 +139,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1740020949176,
                 subject: 'Please call me',
-                body: 'Tried to call you and you didnt',
+                body: 'Tried to call you and you didnt' + utilService.makeLorem(30),
                 isRead: false,
                 isStarred: false,
                 sentAt: null,
@@ -142,7 +151,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1551133830500,
                 subject: 'Order sent',
-                body: 'Your odrer is on way to your',
+                body: 'Your odrer is on way to your' + utilService.makeLorem(30),
                 isRead: true,
                 isStarred: false,
                 sentAt: 1556133940594,
@@ -154,7 +163,7 @@ function _createDemoMails() {
                 id: utilService.makeId(),
                 createdAt: 1740010949176,
                 subject: 'Final sale',
-                body: 'Big winter sale in our shops around the',
+                body: 'Big winter sale in our shops around the' + utilService.makeLorem(30),
                 isRead: true,
                 isStarred: false,
                 sentAt: 1730010969176,
