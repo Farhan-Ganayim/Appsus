@@ -3,20 +3,14 @@ const { useEffect, useState } = React
 export function MailFilter({ filterBy, onSetFilterBy }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
-
     useEffect(() => {
         onSetFilterBy(filterByToEdit)
     }, [filterByToEdit])
 
     function onHandleChange({ target }) {
         let { name: field, type, value } = target
-        // console.log('value', value)
-        // console.log("filterByToEdit", filterByToEdit)
-        // console.log("target", target);
-
         // if (type === 'number') value = +value || ''
         setFilterByToEdit(prevFilterBy => ({ ...prevFilterBy, [field]: value }))
-
     }
     return (
         <section className="mail-filter-container">
@@ -31,7 +25,6 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
                     onChange={onHandleChange}
                 />
             </form>
-
         </section>
     )
 }

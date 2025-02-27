@@ -3,6 +3,7 @@ const { useEffect, useState } = React
 // const [searchParams, setSearchParams] = useSearchParams()
 
 import { MailFilter } from "../cmps/MailFilter.jsx"
+import { MailFolderList } from "../cmps/MailFolderList.jsx"
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
 
@@ -14,8 +15,10 @@ export function MailIndex() {
     useEffect(() => {
         loadMails()
         console.log(filterBy)
-        
+
     }, [filterBy])
+
+    // filterBy.status='inbox'
 
     function loadMails() {
         mailService.query(filterBy)
@@ -32,10 +35,24 @@ export function MailIndex() {
         setFilterBy({ ...filterBy })
     }
 
+    function onSelectMailFolder(folder) {
+        setFilterBy(prevFilter => ({ ...prevFilter, status: folder }))
+    }
+
     return (
-        <section className="mail-index-container">
-            <MailFilter filterBy={{ filterBy }} onSetFilterBy={onSetFilterBy} />
-            <MailList mails={mails} />
+        <section className="mail-index-container flex">
+            <div className="mail-folders">
+
+                <MailFolderList
+                    onSelectMailFolder={onSelectMailFolder}
+                />
+            </div>
+
+            <div className="mail-filter-list">
+
+                <MailFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
+                <MailList mails={mails} />
+            </div>
         </section>)
 }
 

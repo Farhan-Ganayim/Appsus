@@ -3,8 +3,6 @@ import { MailPreview } from "./MailPreview.jsx"
 export function MailList({ mails }) {
 
     if (!mails) return <div className="mail-list">No mails to show</div>
-
-
     return (
         <section className="mail-list-container">
             <table className="mail-table">
@@ -17,14 +15,11 @@ export function MailList({ mails }) {
                     </tr>
                 </thead>
                 <tbody>
-
                     {mails.map(mail => (
                         <MailPreview mail={mail} key={mail.id} />
-
                     ))}
                 </tbody>
             </table>
-
         </section>
     )
 }

@@ -49,7 +49,7 @@ function save(mail) {
 
 function getDefaultFilter() {
     return {
-        status: '',
+        status: 'all',
         txt: '',
         isRead: undefined,
         isStarred: undefined,
@@ -80,7 +80,7 @@ function filter(mails, filterBy) {
             mails = mails.filter(mail => mail.removedAt)
             break
     }
-    console.log('after filter', filterBy, mails);
+    console.log('after filter', filterBy, mails)
 
     return mails
 }
@@ -146,7 +146,7 @@ function _createDemoMails() {
                 isRead: true,
                 isStarred: false,
                 sentAt: 1556133940594,
-                removedAt: 1551138940594,
+                removedAt: 1558138940594,
                 from: 'wolverine@momo.com',
                 to: 'user@appsus.com'
             },
