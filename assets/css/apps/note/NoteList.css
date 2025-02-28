@@ -4,6 +4,7 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   justify-content: center;
   gap: 10px;
+  padding: 0 1em;
 }
 
 .note-list ul li {
@@ -17,5 +18,5 @@
   border-radius: 5px;
   gap: 5px;
   padding: 10px;
-  background: linear-gradient(360deg, #a6a698, #fbfdfc);
+  background: var(--gray1);
 }

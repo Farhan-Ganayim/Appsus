@@ -57,6 +57,7 @@ function getEmptyNote(type = '', txt = '', backgroundColor = '', info = '') {
 function getDefaultFilter() {
   return { type: '', isPinned: '' }
 }
+
 function _createNotes() {
   const noteType = ['NoteTxt', 'NoteImg', 'NoteTodos']
   const notes = [
@@ -87,6 +88,82 @@ function _createNotes() {
     },
     {
       id: 'n103',
+      createdAt: 1112224,
+      type: 'NoteTodos',
+      isPinned: false,
+      info: {
+        title: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving license', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      },
+    },
+    {
+      id: 'n104',
+      createdAt: 1112222,
+      type: 'NoteTxt',
+      isPinned: true,
+      style: {
+        backgroundColor: '#00d',
+      },
+      info: {
+        txt: 'Fullstack Me Baby!',
+      },
+    },
+    {
+      id: 'n105',
+      createdAt: 1112223,
+      type: 'NoteImg',
+      isPinned: false,
+      info: {
+        url: 'assets/img/15.jpg',
+        title: 'Bobi and Me',
+      },
+      style: {
+        backgroundColor: '#00d',
+      },
+    },
+    {
+      id: 'n106',
+      createdAt: 1112224,
+      type: 'NoteTodos',
+      isPinned: false,
+      info: {
+        title: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving license', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      },
+    },
+    {
+      id: 'n107',
+      createdAt: 1112222,
+      type: 'NoteTxt',
+      isPinned: true,
+      style: {
+        backgroundColor: '#00d',
+      },
+      info: {
+        txt: 'Fullstack Me Baby!',
+      },
+    },
+    {
+      id: 'n108',
+      createdAt: 1112223,
+      type: 'NoteImg',
+      isPinned: false,
+      info: {
+        url: 'assets/img/15.jpg',
+        title: 'Bobi and Me',
+      },
+      style: {
+        backgroundColor: '#00d',
+      },
+    },
+    {
+      id: 'n109',
       createdAt: 1112224,
       type: 'NoteTodos',
       isPinned: false,
