@@ -6,6 +6,7 @@ import { MailFilter } from "../cmps/MailFilter.jsx"
 import { MailFolderList } from "../cmps/MailFolderList.jsx"
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
+import { MailCompose } from "../cmps/MailCompose.jsx"
 
 export function MailIndex() {
 
@@ -37,6 +38,8 @@ export function MailIndex() {
 
     function onSelectMailFolder(folder) {
         setFilterBy(prevFilter => ({ ...prevFilter, status: folder }))
+    }function onMailSent(){
+        loadMails()
     }
 
     return (
@@ -52,6 +55,7 @@ export function MailIndex() {
 
                 <MailFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
                 <MailList mails={mails} />
+                <MailCompose onMailSent={onMailSent}/>
             </div>
         </section>)
 }
