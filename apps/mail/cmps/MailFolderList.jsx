@@ -11,7 +11,7 @@ export function MailFolderList({onSelectMailFolder}) {
                 </li>
                 <li>
                     <button className="flex" onClick={() => onSelectMailFolder('sent')}>
-                        <i class="fa-regular fa-paper-plane"></i> <span>Sent</span>
+                        <i className="fa-regular fa-paper-plane"></i> <span>Sent</span>
                     </button>
 
                 </li>
