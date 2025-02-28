@@ -50,7 +50,7 @@ function save(mail) {
 
 function getDefaultFilter() {
     return {
-        status: 'all',
+        status: 'inbox',
         txt: '',
         isRead: undefined,
         isStarred: undefined,
