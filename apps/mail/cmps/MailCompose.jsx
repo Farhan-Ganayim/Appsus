@@ -39,16 +39,42 @@ export function MailCompose({ onClose, onMailSent }) {
 
     return (
         <section className="mail-compose-modal">
-            <h3>New Message</h3>
+            <h4>New Message</h4>
             <form onSubmit={onSaveMail} >
-                <label htmlFor="to">To </label>
-                <input name="to" type="text" id="to" value={mailToCompose.to} onChange={handleChange} />
-                <label htmlFor="subject">Subject </label>
-                <input name="subject" type="text" id="subject" value={mailToCompose.subject} onChange={handleChange} />
-                <input name="body" type="text" value={mailToCompose.body} onChange={handleChange} />
-                <div className="mail-compose-actions">
-                    <button>Send</button>
-                    <button onClick={onCancelMail}>Cancel</button>
+                <label className="to-label" htmlFor="to">To </label>
+                <input
+                    className="to-input"
+                    name="to"
+                    type="text"
+                    id="to"
+                    value={mailToCompose.to}
+                    onChange={handleChange}
+                />
+                <label className="subject-label" htmlFor="subject">Subject </label>
+                <input
+                    className="subject-input"
+                    name="subject"
+                    type="text"
+                    id="subject"
+                    value={mailToCompose.subject}
+                    onChange={handleChange}
+                />
+
+                <textarea
+                    className="body-input"
+                    name="body"
+                    // type="text"
+                    value={mailToCompose.body}
+                    onChange={handleChange}
+                ></textarea>
+
+                <div className="mail-compose-actions flex space-between">
+                    <button className="send-btn">Send</button>
+                    <button
+                        className="compose-cancel"
+                        onClick={onCancelMail}>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
                 </div>
             </form>
 

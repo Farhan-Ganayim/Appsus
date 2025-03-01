@@ -40,7 +40,7 @@ export function MailIndex() {
     function onSelectMailFolder(folder) {
         setFilterBy(prevFilter => ({ ...prevFilter, status: folder }))
     }
-     function onMailSent() {
+    function onMailSent() {
         loadMails()
     }
 
@@ -51,7 +51,11 @@ export function MailIndex() {
     return (
         <section className="mail-index-container flex">
             <div className="mail-folders">
-                <button onClick={toggleCompose}>Compose</button>
+                <button
+                    className="compose-btn"
+                    onClick={toggleCompose}>
+                    <i class="fa-solid fa-pencil"></i> Compose
+                </button>
                 <MailFolderList
                     onSelectMailFolder={onSelectMailFolder}
                 />
