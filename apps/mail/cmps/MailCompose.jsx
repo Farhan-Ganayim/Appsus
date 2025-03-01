@@ -3,7 +3,7 @@ import { utilService } from "../../../services/util.service.js"
 
 const { useState } = React
 
-export function MailCompose({onMailSent}) {
+export function MailCompose({ onClose, onMailSent }) {
 
     const [mailToCompose, setMailToCompose] = useState(mailService.getEmptyMail())
     console.log('CCCCCCCCCCCCCCC', mailToCompose)
@@ -26,6 +26,17 @@ export function MailCompose({onMailSent}) {
             })
     }
 
+    function onCancelMail(ev) {
+        ev.preventDefault()
+        const draftMail = { ...mailToCompose, sentAt: null }
+        mailService.save(draftMail)
+            .then(savedDraft => {
+                console.log("Draft saved:", savedDraft)
+                onMailSent()
+                onClose()
+            })
+    }
+
     return (
         <section className="mail-compose-modal">
             <h3>New Message</h3>
@@ -37,7 +48,7 @@ export function MailCompose({onMailSent}) {
                 <input name="body" type="text" value={mailToCompose.body} onChange={handleChange} />
                 <div className="mail-compose-actions">
                     <button>Send</button>
-                    <button>Cancel</button>
+                    <button onClick={onCancelMail}>Cancel</button>
                 </div>
             </form>
 

@@ -12,6 +12,7 @@ export function MailIndex() {
 
     const [mails, setMails] = useState(null)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
+    const [isCompose, setIsCompose] = useState(false)
 
     useEffect(() => {
         loadMails()
@@ -38,14 +39,19 @@ export function MailIndex() {
 
     function onSelectMailFolder(folder) {
         setFilterBy(prevFilter => ({ ...prevFilter, status: folder }))
-    }function onMailSent(){
+    }
+     function onMailSent() {
         loadMails()
+    }
+
+    function toggleCompose() {
+        setIsCompose(prevModal => !prevModal)
     }
 
     return (
         <section className="mail-index-container flex">
             <div className="mail-folders">
-
+                <button onClick={toggleCompose}>Compose</button>
                 <MailFolderList
                     onSelectMailFolder={onSelectMailFolder}
                 />
@@ -55,7 +61,14 @@ export function MailIndex() {
 
                 <MailFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
                 <MailList mails={mails} />
-                <MailCompose onMailSent={onMailSent}/>
+                {
+                    isCompose && (
+
+                        <MailCompose
+                            onClose={toggleCompose}
+                            onMailSent={onMailSent} />
+                    )
+                }
             </div>
         </section>)
 }

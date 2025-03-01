@@ -27,14 +27,14 @@ export function MailPreview({ mail }) {
                     {mail.from}
                 </Link>
             </td>
-            <td className="subject-col flex">
-                <Link to={`/mail/${mail.id}`}>
+            <Link to={`/mail/${mail.id}`}>
+                <td className="subject-col flex">
                     <span className="mail-subject">{mail.subject}...</span>
                     <span>
                         {mailService.getShortBody(mail.body)}
                     </span>
-                </Link>
-            </td>
+                </td>
+            </Link>
             <td className="date-col">
                 {dateFormatted}
             </td>
