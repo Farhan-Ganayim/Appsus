@@ -40,7 +40,7 @@ function save(note) {
   }
 }
 
-function getEmptyNote(type = '', txt = '', backgroundColor = '', info = '') {
+function getEmptyNote(type = '', backgroundColor = '', info = '') {
   return {
     createdAt: 1112222,
     type: 'NoteTxt',
@@ -48,9 +48,7 @@ function getEmptyNote(type = '', txt = '', backgroundColor = '', info = '') {
     style: {
       backgroundColor: '#00d',
     },
-    info: {
-      txt: 'Fullstack Me Baby!',
-    },
+    info: {},
   }
 }
 
@@ -63,7 +61,7 @@ function _createNotes() {
   const notes = [
     {
       id: 'n101',
-      createdAt: 1112222,
+      createdAt: 111276222,
       type: 'NoteTxt',
       isPinned: true,
       style: {
@@ -75,7 +73,7 @@ function _createNotes() {
     },
     {
       id: 'n102',
-      createdAt: 1112223,
+      createdAt: 1112226763,
       type: 'NoteImg',
       isPinned: false,
       info: {
@@ -88,7 +86,7 @@ function _createNotes() {
     },
     {
       id: 'n103',
-      createdAt: 1112224,
+      createdAt: 1112227865,
       type: 'NoteTodos',
       isPinned: false,
       info: {
@@ -113,7 +111,7 @@ function _createNotes() {
     },
     {
       id: 'n105',
-      createdAt: 1112223,
+      createdAt: 11122333523,
       type: 'NoteImg',
       isPinned: false,
       info: {
@@ -126,7 +124,7 @@ function _createNotes() {
     },
     {
       id: 'n106',
-      createdAt: 1112224,
+      createdAt: 111222774,
       type: 'NoteTodos',
       isPinned: false,
       info: {
@@ -139,7 +137,7 @@ function _createNotes() {
     },
     {
       id: 'n107',
-      createdAt: 1112222,
+      createdAt: 11124356222,
       type: 'NoteTxt',
       isPinned: true,
       style: {
@@ -151,7 +149,7 @@ function _createNotes() {
     },
     {
       id: 'n108',
-      createdAt: 1112223,
+      createdAt: 1112343223,
       type: 'NoteImg',
       isPinned: false,
       info: {
@@ -164,7 +162,7 @@ function _createNotes() {
     },
     {
       id: 'n109',
-      createdAt: 1112224,
+      createdAt: 111224524,
       type: 'NoteTodos',
       isPinned: false,
       info: {

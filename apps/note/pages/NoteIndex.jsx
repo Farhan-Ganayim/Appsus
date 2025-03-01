@@ -25,7 +25,6 @@ export function NoteIndex() {
 
   function onRemoveNote(noteId) {
     notesService.remove(noteId).then(() => {
-      console.log('removed!')
       setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId))
     })
   }
