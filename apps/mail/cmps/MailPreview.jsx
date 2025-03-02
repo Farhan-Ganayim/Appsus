@@ -1,5 +1,5 @@
 const { useState } = React
-const { Link } = ReactRouterDOM
+// const { Link } = ReactRouterDOM
 
 import { utilService } from "../../../services/util.service.js"
 import { mailService } from "../services/mail.service.js"
@@ -11,12 +11,21 @@ export function MailPreview({ mail, onSelectMail }) {
     const dateFormatted = utilService.getFormattedDate(mail.createdAt)
 
     function onToggleStarred(ev) {
+        ev.stopPropagation()
         setIsStarred(!isStarred)
         mail.isStarred = !mail.isStarred
+        mailService.save(mail)
+            .then(starredMail => {
+                console.log("Star toggled:", starredMail)
+
+            })
+            .catch(err => {
+                console.error("Error updating star toggle:", err)
+            })
     }
 
     return (
-        <tr className="mail-preview" onClick={()=>onSelectMail(mail.id)}>
+        <tr className="mail-preview" onClick={() => onSelectMail(mail.id)}>
             <td className="stars-col flex justify-center" onClick={onToggleStarred}>
                 <span className={`star-icon ${isStarred ? 'starred' : ''}`} >
                     {isStarred ? '★' : '☆'}
