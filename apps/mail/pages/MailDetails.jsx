@@ -4,16 +4,16 @@ import { mailService } from "../services/mail.service.js"
 const { useState, useEffect } = React
 const { useParams, useNavigate, Link } = ReactRouterDOM
 
-export function MailDetails() {
+export function MailDetails({ mailId, onBack, onMailDeleted }) {
 
-    const params = useParams()
-    console.log('hhhhhhhhhhhhh', params);
-
+    // const params = useParams()
+    // console.log('hhhhhhhhhhhhh', params);
     const [mail, setMail] = useState(null)
+
     useEffect(() => {
-        if (!params.mailId) return
+        if (!mailId) return
         else {
-            mailService.getById(params.mailId)
+            mailService.getById(mailId)
 
                 .then(mail => {
                     setMail(mail)
@@ -22,14 +22,15 @@ export function MailDetails() {
                     console.error('Error in loading mail:', err)
                 })
         }
-    }, [params.mailId])
+    }, [mailId])
 
     const navigate = useNavigate()
 
     function OnRemoveMail() {
-        mailService.remove(params.mailId)
+        mailService.remove(mailId)
             .then(() => {
-                navigate('/mail')
+                onMailDeleted()
+                onBack()
             })
             .catch(err => {
                 console.error('Could not remove mail:', err)
@@ -45,7 +46,7 @@ export function MailDetails() {
                 <h3 className="mail-subject">{subject}</h3>
                 <section className="mail-action-btns flex">
 
-                    <button onClick={() => navigate('/mail')}>
+                    <button onClick={onBack}>
                         <img src="../../../assets/img/back.png" alt="Back to mails" />
                     </button>
                     <button onClick={() => OnRemoveMail()}>

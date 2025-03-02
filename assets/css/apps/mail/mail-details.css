@@ -1,7 +1,7 @@
 .mail-details {
     width: 60vw;
     place-self: center;
-    margin-top: 3em;
+    margin-top: 4.5em;
 
     .mail-header {
         justify-content: space-between;

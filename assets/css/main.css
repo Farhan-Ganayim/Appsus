@@ -13,7 +13,8 @@
 @import './apps/note/NoteForm.css';
 
 @import './apps/mail/MailIndex.css';
-@import './apps/mail/MailList.css';
+@import './apps/mail/mail-list.css';
 @import './apps/mail/mail-filter.css';
 @import './apps/mail/mail-details.css';
 @import './apps/mail/mail-folders.css';
+@import './apps/mail/compose-mail.css';
