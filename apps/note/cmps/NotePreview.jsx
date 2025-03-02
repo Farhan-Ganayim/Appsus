@@ -16,5 +16,5 @@ export function NotePreview({ note }) {
     }
   }
 
-  return <article className="note-prev">{getNoteToRender()}</article>
+  return <section className="note-prev">{getNoteToRender()}</section>
 }

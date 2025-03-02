@@ -1,5 +1,5 @@
 const { useState, useEffect } = React
-
+import { NoteForm } from '../cmps/NoteForm.jsx'
 import { NoteFilter } from '../cmps/NoteFilter.jsx'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { notesService } from '../services/note.service.js'
@@ -37,6 +37,7 @@ export function NoteIndex() {
   return (
     <section className="note-container">
       <NoteFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
+      <NoteForm />
       <NoteList notes={notes} onRemoveNote={onRemoveNote} />
     </section>
   )

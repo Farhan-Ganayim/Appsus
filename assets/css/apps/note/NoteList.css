@@ -1,13 +1,12 @@
-/* note list */
-.note-list ul {
+/* .note-list ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-content: center;
-  gap: 10px;
+  gap: 16px;
   padding: 0 1em;
 }
 
-.note-list ul li {
+.note-list li {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -19,4 +18,26 @@
   gap: 5px;
   padding: 10px;
   background: var(--gray1);
+} */
+
+.note-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 1em;
+}
+
+.note-list li {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: var(--gray1);
+  max-width: 400px;
+  margin: 0 0 auto;
+}
+
+.note-list li section {
+  text-align: center;
 }

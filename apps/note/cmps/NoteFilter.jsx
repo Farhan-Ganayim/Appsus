@@ -1,10 +1,10 @@
 export function NoteFilter() {
   return (
     <section className="note-filter">
-      <form>
+      {/* <form>
         <label htmlFor="txt"></label>
         <input type="text" name="txt" id="txt" />
-      </form>
+      </form> */}
     </section>
   )
 }
