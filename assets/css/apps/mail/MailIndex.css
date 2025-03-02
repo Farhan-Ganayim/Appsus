@@ -1,4 +1,5 @@
 .mail-index-container {
+    gap:7em;
 
     .mail-folders {
         margin-top: 5em;
