@@ -79,11 +79,14 @@ function filter(mails, filterBy) {
         case 'inbox':
             mails = mails.filter(mail => mail.to === loggedinUser.email && !mail.removedAt && mail.sentAt)
             break
+        case 'starred':
+            mails = mails.filter(mail => mail.isStarred && !mail.removedAt)
+            break
         case 'sent':
             mails = mails.filter(mail => mail.from === loggedinUser.email && mail.sentAt)
             break
         case 'drafts':
-            mails = mails.filter(mail => !mail.sentAt)
+            mails = mails.filter(mail => !mail.sentAt && !mail.removedAt)
             break
         case 'trash':
             mails = mails.filter(mail => mail.removedAt)

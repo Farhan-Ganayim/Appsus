@@ -27,14 +27,26 @@ export function MailDetails({ mailId, onBack, onMailDeleted }) {
     const navigate = useNavigate()
 
     function OnRemoveMail() {
-        mailService.remove(mailId)
-            .then(() => {
-                onMailDeleted()
-                onBack()
-            })
-            .catch(err => {
-                console.error('Could not remove mail:', err)
-            })
+        if (!mail.removedAt) {
+            const removedMail = { ...mail, removedAt: Date.now() }
+            mailService.save(removedMail)
+                .then(() => {
+                    onMailDeleted()
+                    onBack()
+                })
+                .catch(err => {
+                    console.error('Error on moving to trash:', err)
+                })
+        } else {
+            mailService.remove(mailId)
+                .then(() => {
+                    onMailDeleted()
+                    onBack()
+                })
+                .catch(err => {
+                    console.error('Could not remove mail:', err)
+                })
+        }
     }
 
     if (!mail) return <div>Loading mail...</div>
