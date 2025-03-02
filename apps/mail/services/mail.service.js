@@ -64,8 +64,6 @@ function getShortBody(Text, length = 12) {
     return shortBody
 }
 
-
-
 function filter(mails, filterBy) {
     if (filterBy.txt) {
         const regExp = new RegExp(filterBy.txt, 'i')
@@ -90,6 +88,9 @@ function filter(mails, filterBy) {
             break
         case 'trash':
             mails = mails.filter(mail => mail.removedAt)
+            break
+        case 'all':
+            mails = mails.filter(mail => !mail.removedAt)
             break
     }
     console.log('after filter', filterBy, mails)
