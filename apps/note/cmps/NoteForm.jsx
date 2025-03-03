@@ -3,10 +3,6 @@ const { useState } = React
 const noteTypes = ['text', 'image', 'todos']
 
 export function NoteForm() {
-  // useState() will have initial value on the component render.
-  // can have multiple different values - int's string's arrays, complex objects and so on.
-  // State - Changes the ui and re render the component.
-  //State will also store values.
   const [someValue, setSomeValue] = useState(noteTypes[0])
   const [userInput, setUserInput] = useState('')
 
