@@ -16,6 +16,8 @@ export function MailIndex() {
     const [isCompose, setIsCompose] = useState(false)
     const [selectedMailId, setSelectedMailId] = useState(null)
 
+    const [isFoldersOpen, setIsFoldersOpen] = useState(false)
+
     useEffect(() => {
         loadMails()
         console.log(filterBy)
@@ -57,6 +59,10 @@ export function MailIndex() {
 
     function onSelectMail(mailId) {
         setSelectedMailId(mailId)
+    }
+
+    function togglMenu() {
+        setIsFoldersOpen(menuOpen => !menuOpen)
     }
 
     return (
