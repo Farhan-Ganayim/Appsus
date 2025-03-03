@@ -11,8 +11,6 @@
     }
 
     .mail-list-container {
-        /* font-size: 0.9rem; */
-        background-color: aquamarine;
         padding: 0;
 
         .mail-table {
@@ -58,4 +56,40 @@
 
 }
 
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+    .mail-index-container{
+        .mail-filter-list{
+            margin-left: 0;
+        }
+        .compose-btn{
+            position: fixed;
+            bottom: 8em;
+            right: 2em;
+            margin: 0;
+            border-radius: 2em;
+        }
+        .mail-table{
+            margin-left: .7em;
+        }
+
+        .hamburger-btn{
+            display: inline-block;
+        }
+        .mail-folders-container{
+         
+
+            .mail-folders{
+                position: absolute;
+                background-color: #fff;
+                transform: translateX(-100%);
+            }
+            .mail-folders.open {
+                transform: translateX(100%);
+              }
+        }
+    }
+
+
+}
+
+

@@ -67,16 +67,27 @@ export function MailIndex() {
 
     return (
         <section className="mail-index-container flex">
-            <div className="mail-folders">
-                <button
-                    className="compose-btn"
-                    onClick={toggleCompose}>
-                    <i class="fa-solid fa-pencil"></i> Compose
-                </button>
-                <MailFolderList
-                    onSelectMailFolder={onSelectMailFolder}
-                />
+             
+            <button
+                className="hamburger-btn"
+                onClick={togglMenu}>
+                <i className="fa-solid fa-bars"></i>
+            </button>
+            <div className="mail-folders-container">
+            <button
+                className="compose-btn"
+                onClick={toggleCompose}>
+                <i class="fa-solid fa-pencil"></i> Compose
+            </button>
+                <div className={`mail-folders ${isFoldersOpen ? 'open' : ''}`}>
+
+                    <MailFolderList
+                        onSelectMailFolder={onSelectMailFolder}
+                    />
+                </div>
             </div>
+
+           
 
             <div className="mail-filter-list">
 
