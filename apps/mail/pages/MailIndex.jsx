@@ -87,7 +87,7 @@ export function MailIndex() {
                     />
                 </div>
                 {isFoldersOpen && (
-                    <div className="folders-overlay" onClick={toggleMenu}></div>
+                    <div className="mobile-overlay" onClick={toggleMenu}></div>
                 )}
             </div>
 
