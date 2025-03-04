@@ -71,6 +71,8 @@
     }
 
     .mail-index-container {
+        place-self: center;
+
         .mail-filter-list {
             margin-left: 0;
             width: 95vw;
@@ -127,21 +129,28 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+
+            .stars-col {
+
+                .star-icon {
+                    font-size: 1.6em;
+                }
+            }
+        }
+
+        .mail-details {
+            max-width: 85vw;
+            margin: 4em 1.5em;
         }
     }
-
     .mail-filter-container {
         place-self: center;
         padding: 0;
-
+    
         input {
             height: 2.5em;
             margin-bottom: .7em;
             width: 15em;
         }
-    }
-
-    .mail-details {
-        max-width: 85vw;
     }
 }

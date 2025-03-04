@@ -41,17 +41,17 @@
     .date-col {
         text-align: center;
     }
+    .stars-col {
+    
+        .star-icon {
+            font-size: 1.4em;
+        }
+    
+        .star-icon.starred {
+            color: gold;
+        }
+    }
 }
 
-.stars-col {
-
-    .star-icon {
-        font-size: 1.4em;
-    }
-
-    .star-icon.starred {
-        color: gold;
-    }
-}
 
 /* .from-col {} */
