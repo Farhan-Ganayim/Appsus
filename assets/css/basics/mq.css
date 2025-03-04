@@ -138,10 +138,7 @@
             }
         }
 
-        .mail-details {
-            max-width: 85vw;
-            margin: 4em 1.5em;
-        }
+       
     }
     .mail-filter-container {
         place-self: center;
@@ -153,4 +150,8 @@
             width: 15em;
         }
     }
+}
+.mail-details {
+    max-width: 80vw;
+    margin: 2.5em 2.5em;
 }
