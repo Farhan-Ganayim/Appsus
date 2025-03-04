@@ -155,6 +155,9 @@
     .mail-details {
         max-width: 80vw;
         margin: 2.5em 2.5em;
+        .mail-header{
+            gap:5em;
+        }
 
 
     }
