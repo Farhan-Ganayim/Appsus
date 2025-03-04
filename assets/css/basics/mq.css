@@ -15,7 +15,7 @@
 
         .mail-table {
             tr {
-                margin-bottom: .5em;
+                /* margin-bottom: .5em; */
 
                 td {
                     padding: .3em;
@@ -24,6 +24,7 @@
         }
 
         .mail-preview {
+            padding: .5em;
             display: grid;
             grid-template-columns: 1fr auto;
             grid-template-rows: auto auto;
@@ -57,42 +58,65 @@
 }
 
 @media (max-width: 600px) {
-    .mail-index-container{
-        .mail-filter-list{
+    .mail-index-container {
+        .mail-filter-list {
             margin-left: 0;
         }
-        .compose-btn{
+
+        .compose-btn {
             position: fixed;
             bottom: 8em;
             right: 2em;
             margin: 0;
             border-radius: 2em;
         }
-        .mail-table{
+
+        .mail-table {
             margin-left: .7em;
         }
 
-        .hamburger-btn{
+        .hamburger-btn {
             display: inline-block;
+            z-index: 99;
+            border: none;
+            background-color: #fff;
+            font-size: 1.5em;
         }
-        .mail-folders-container{
-         
 
-            .mail-folders{
+        .mobile-folders-container {
+
+            .mobile-folders {
                 position: absolute;
-                width:150px;
-                height: 100vh;
+                width: 200px;
+                height: 100%;
                 background-color: #fff;
                 transform: translateX(-100%);
-                z-index: 999;
+                transition: transform 0.4s ease;
+                z-index: 98;
             }
-            .mail-folders.open {
-                transform: translateX(100%);
-              }
+
+            .mobile-folders.open {
+                transform: translateX(0);
+            }
+
+            .folders-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+                z-index: 97;
+            }
+
         }
     }
 
+    .mail-list-container {
+        margin-left: 2em;
+    }
 
+    .mail-filter-container {
+        place-self: center;
+    }
 }
-
-

@@ -44,6 +44,7 @@ export function MailIndex() {
     function onSelectMailFolder(folder) {
         setFilterBy(prevFilter => ({ ...prevFilter, status: folder }))
         setSelectedMailId(null)
+        toggleMenu()
     }
     function onMailSent() {
         loadMails()
@@ -73,18 +74,21 @@ export function MailIndex() {
                 onClick={toggleMenu}>
                 <i className="fa-solid fa-bars"></i>
             </button>
-            <div className="mail-folders-container">
+            <div className="mobile-folders-container">
                 <button
                     className="compose-btn"
                     onClick={toggleCompose}>
                     <i class="fa-solid fa-pencil"></i> Compose
                 </button>
-                <div className={`mail-folders ${isFoldersOpen ? 'open' : ''}`}>
+                <div className={`mobile-folders ${isFoldersOpen ? 'open' : ''}`}>
 
                     <MailFolderList
                         onSelectMailFolder={onSelectMailFolder}
                     />
                 </div>
+                {isFoldersOpen && (
+                    <div className="folders-overlay" onClick={toggleMenu}></div>
+                )}
             </div>
 
             <div className="mail-filter-list">
