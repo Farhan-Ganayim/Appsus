@@ -24,7 +24,13 @@ export function MailIndex() {
 
     }, [filterBy])
 
-    // filterBy.status='inbox'
+    useEffect(() => {
+        if (isFoldersOpen && window.innerWidth <= 600) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+    }, [isFoldersOpen])
 
     function loadMails() {
         mailService.query(filterBy)
