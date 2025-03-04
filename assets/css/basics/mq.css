@@ -135,8 +135,9 @@
         padding: 0;
 
         input {
-            height: 2em;
+            height: 2.5em;
             margin-bottom: .7em;
+            width: 15em;
         }
     }
 
