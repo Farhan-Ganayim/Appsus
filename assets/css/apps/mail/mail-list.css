@@ -23,10 +23,14 @@
 
 .mail-preview {
     cursor: pointer;
+    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    .from-col{
+        font-weight:bold;
+    }
 
     .subject-col {
         .mail-subject {
-            font-weight: 550;
+            font-weight: 520;
         }
 
         .mail-short-body {

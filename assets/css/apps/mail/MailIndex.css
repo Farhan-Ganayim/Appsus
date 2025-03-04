@@ -25,3 +25,9 @@
         margin-top: 5em;
     }
 }
+
+.hamburger-btn {
+    /* position: fixed; */
+    margin: .2em .2em;
+    display: none;
+}
