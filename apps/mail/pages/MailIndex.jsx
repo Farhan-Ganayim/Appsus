@@ -61,24 +61,24 @@ export function MailIndex() {
         setSelectedMailId(mailId)
     }
 
-    function togglMenu() {
+    function toggleMenu() {
         setIsFoldersOpen(menuOpen => !menuOpen)
     }
 
     return (
         <section className="mail-index-container flex">
-             
+
             <button
                 className="hamburger-btn"
-                onClick={togglMenu}>
+                onClick={toggleMenu}>
                 <i className="fa-solid fa-bars"></i>
             </button>
             <div className="mail-folders-container">
-            <button
-                className="compose-btn"
-                onClick={toggleCompose}>
-                <i class="fa-solid fa-pencil"></i> Compose
-            </button>
+                <button
+                    className="compose-btn"
+                    onClick={toggleCompose}>
+                    <i class="fa-solid fa-pencil"></i> Compose
+                </button>
                 <div className={`mail-folders ${isFoldersOpen ? 'open' : ''}`}>
 
                     <MailFolderList
@@ -86,8 +86,6 @@ export function MailIndex() {
                     />
                 </div>
             </div>
-
-           
 
             <div className="mail-filter-list">
 

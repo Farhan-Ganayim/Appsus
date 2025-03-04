@@ -80,8 +80,11 @@
 
             .mail-folders{
                 position: absolute;
+                width:150px;
+                height: 100vh;
                 background-color: #fff;
                 transform: translateX(-100%);
+                z-index: 999;
             }
             .mail-folders.open {
                 transform: translateX(100%);
