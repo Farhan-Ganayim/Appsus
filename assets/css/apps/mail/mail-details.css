@@ -4,7 +4,7 @@
     margin: 4.5em 4em;
 
     .mail-header {
-        /* justify-content: space-between; */
+        justify-content: space-between;
         gap :12em;
 
         .mail-action-btns {

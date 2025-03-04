@@ -155,12 +155,14 @@
     .mail-details {
         max-width: 80vw;
         margin: 2.5em 2.5em;
-        .mail-header{
-            gap:5em;
+
+        .mail-header {
+            gap: 5em;
         }
 
 
     }
+
     .mail-compose-modal {
         position: fixed;
         top: 0;
@@ -168,6 +170,6 @@
         /* margin-bottom: 0; */
         height: 100vh;
         width: 90vw;
-        
+
     }
 }
