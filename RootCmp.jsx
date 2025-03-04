@@ -10,6 +10,7 @@ import { NoteIndex } from './apps/note/pages/NoteIndex.jsx'
 import { MailDetails } from './apps/mail/pages/MailDetails.jsx'
 import { BookIndex } from './apps/books/pages/BookIndex.jsx'
 import { BookDetails } from './apps/books/cmps/BookDetails.jsx'
+import {BookEdit} from './apps/books/pages/BookEdit.jsx'
 
 export function RootCmp() {
     return <Router>
@@ -20,11 +21,10 @@ export function RootCmp() {
                 <Route path="/about" element={<About />} />
                 <Route path="/mail" element={<MailIndex />} />
                 <Route path="/mail/:mailId" element={<MailDetails />} />
-
                 <Route path="/note" element={<NoteIndex />} />
-                <Route path="/books" element={<BookIndex />}>
-                    <Route path="/books/:bookId" element={<BookDetails />} />
-                </Route>
+                <Route path="/books" element={<BookIndex />} />
+                <Route path="/books/:bookId" element={<BookDetails />} />
+                <Route path="/books/edit/:bookId" element={<BookEdit />} />
             </Routes>
             <UserMsg />
         </section>
