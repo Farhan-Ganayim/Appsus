@@ -1,4 +1,6 @@
 .mail-details {
+    flex-direction: column;
+    gap: .6em;
     max-width: 50vw;
     place-self: center;
     margin: 4.5em 4em;

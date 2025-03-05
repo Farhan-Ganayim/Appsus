@@ -53,7 +53,7 @@ export function MailDetails({ mailId, onBack, onMailDeleted }) {
     const { from, to, subject, body, sentAt } = mail
 
     return (
-        <section className="mail-details">
+        <section className="mail-details flex">
             <header className="mail-header flex">
                 <h3 className="mail-subject">{subject}</h3>
                 <section className="mail-action-btns flex">
