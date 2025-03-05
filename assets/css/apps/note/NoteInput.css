@@ -1,8 +1,12 @@
-.note-input {
+.note-input-container {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
 }
-.items-container {
-  background-color: antiquewhite;
+.input-items {
+  padding: 1em;
+  background-color: var(--bg1);
+}
+.note-input-container button {
+  background-color: aliceblue;
 }

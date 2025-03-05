@@ -2,6 +2,7 @@ import { notesService } from '../services/note.service.js'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { NoteFilter } from '../cmps/NoteFilter.jsx'
 import { NoteInput } from '../cmps/NoteInput.jsx'
+import { NoteEdit } from './NoteEdit.jsx'
 
 const { useState, useEffect } = React
 const { Link } = ReactRouterDOM
