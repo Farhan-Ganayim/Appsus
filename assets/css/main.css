@@ -18,4 +18,5 @@
 @import './apps/mail/mail-details.css';
 @import './apps/mail/mail-folders.css';
 @import './apps/mail/mail-compose.css';
-@import './basics/mq.css'
+@import './basics/mq.css';
+@import '../../apps/books/assets/style/main.css';

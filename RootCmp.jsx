@@ -25,6 +25,8 @@ export function RootCmp() {
                 <Route path="/books" element={<BookIndex />} />
                 <Route path="/books/:bookId" element={<BookDetails />} />
                 <Route path="/books/edit/:bookId" element={<BookEdit />} />
+                <Route path="/books/edit" element={<BookEdit />} />
+
             </Routes>
             <UserMsg />
         </section>

@@ -23,6 +23,6 @@
 
 @import 'setup/mq.css';
 
-.app,html{
+.book-index{
     background-color:var(--gray3);
 }
