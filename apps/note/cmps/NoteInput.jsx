@@ -1,4 +1,6 @@
 import { notesService } from '../services/note.service.js'
+import { surveyService } from '../services/survey.service.js'
+
 const { useState } = React
 
 const noteTypes = ['text', 'image', 'todos']
@@ -17,8 +19,8 @@ export function NoteInput() {
   }
 
   return (
-    <section className="note-input">
-      <div className="items-container">
+    <section className="note-input-container">
+      <div className="input-items">
         <input
           onChange={onHandleChange}
           value={userInput}
@@ -26,11 +28,11 @@ export function NoteInput() {
           placeholder={`Enter ${someValue.toUpperCase()}`}
         />
 
-        {/* {noteTypes.map((noteType) => (
+        {noteTypes.map((noteType) => (
           <button key={noteType} onClick={() => onSetNoteType(noteType)}>
             {noteType}
           </button>
-        ))} */}
+        ))}
       </div>
     </section>
   )

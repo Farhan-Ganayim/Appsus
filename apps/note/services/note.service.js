@@ -40,6 +40,8 @@ function save(note) {
   }
 }
 
+// function saveNote() {}
+
 function getEmptyNote(type = '', backgroundColor = '', info = '', txt = '') {
   return {
     id: '',
