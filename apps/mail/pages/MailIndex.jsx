@@ -85,7 +85,7 @@ export function MailIndex() {
                     <button
                         className="compose-btn"
                         onClick={toggleCompose}>
-                        <i class="fa-solid fa-pencil"></i> Compose
+                        <i className="fa-solid fa-pencil"></i> Compose
                     </button>
                     <div className={`mobile-folders ${isFoldersOpen ? 'open' : ''}`}>
 
