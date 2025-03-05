@@ -95,7 +95,7 @@
 
             .mobile-folders {
                 position: absolute;
-                width: 200px;
+                width: 250px;
                 height: 100%;
                 background-color: #fff;
                 transform: translateX(-100%);
@@ -116,7 +116,6 @@
                 background-color: rgba(0, 0, 0, 0.3);
                 z-index: 97;
             }
-
         }
     }
 
@@ -142,8 +141,6 @@
                 }
             }
         }
-
-
     }
 
     .mail-filter-container {
@@ -154,6 +151,13 @@
             margin-bottom: .7em;
             width: 15em;
         }
+
+        .search-container {
+
+            i {
+                top: 40%;
+            }
+        }
     }
 
     .mail-details {
@@ -163,8 +167,6 @@
         .mail-header {
             gap: 5em;
         }
-
-
     }
 
     .mail-compose-modal {
