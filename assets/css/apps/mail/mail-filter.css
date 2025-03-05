@@ -3,9 +3,23 @@
     margin-left: 2em;
     padding: 2em 0;
 
+    .search-container {
+        position: relative;
+
+        i {
+            position: absolute;
+            top:50%;
+            left:.5em;
+            font-size: 1.2em;
+            transform: translateY(-50%);
+            color: rgb(131, 126, 126);
+        }
+    }
+
     input {
         height: 3.5em;
-        border-radius: 1em;
-        border: 1px solid var(--gray1);
+        border-radius: 3em;
+        border: 1px solid lightgrey;
+        padding-left: 3em;
     }
 }

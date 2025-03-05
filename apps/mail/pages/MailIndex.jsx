@@ -20,8 +20,7 @@ export function MailIndex() {
 
     useEffect(() => {
         loadMails()
-        console.log(filterBy)
-
+        // console.log('FFFFFFFFFF',filterBy)
     }, [filterBy])
 
     useEffect(() => {
@@ -91,6 +90,7 @@ export function MailIndex() {
                     <div className={`mobile-folders ${isFoldersOpen ? 'open' : ''}`}>
 
                         <MailFolderList
+                            currFolder={filterBy.status}
                             onSelectMailFolder={onSelectMailFolder}
                         />
                     </div>

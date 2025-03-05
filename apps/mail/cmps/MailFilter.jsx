@@ -15,15 +15,18 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
     return (
         <section className="mail-filter-container">
             <form >
-                <label htmlFor="searchTxt"></label>
-                <input
-                    id="searchTxt"
-                    type="text"
-                    placeholder="Search in mail"
-                    name="txt"
-                    value={filterByToEdit.txt}
-                    onChange={onHandleChange}
-                />
+                {/* <label htmlFor="searchTxt"></label> */}
+                <div className="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        id="searchTxt"
+                        type="text"
+                        placeholder="Search in mail"
+                        name="txt"
+                        value={filterByToEdit.txt}
+                        onChange={onHandleChange}
+                    />
+                </div>
             </form>
         </section>
     )

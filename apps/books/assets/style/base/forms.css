@@ -14,5 +14,5 @@ button:hover {
 }
 input:focus {
     /* background-color: var(--clr1bg); */
-    transition: background-color 1s;
+    /* transition: background-color 1s; */
 }
