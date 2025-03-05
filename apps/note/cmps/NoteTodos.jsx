@@ -5,12 +5,13 @@ export function NoteTodos({ note }) {
   const renderTodos = () => {
     return (
       <section>
-        <h3>{info.title}</h3>
-        <div className="note-todos">
+        <ul className="note-todos">
+          <h3>{info.title}</h3>
+
           {todos.map((todo, index) => {
-            return <li key={index + todo.txt}>{todo.txt}</li>
+            return <li key={index}>{todo.txt}</li>
           })}
-        </div>
+        </ul>
       </section>
     )
   }

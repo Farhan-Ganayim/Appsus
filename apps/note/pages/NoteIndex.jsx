@@ -1,8 +1,10 @@
-const { useState, useEffect } = React
-import { NoteForm } from '../cmps/NoteForm.jsx'
-import { NoteFilter } from '../cmps/NoteFilter.jsx'
-import { NoteList } from '../cmps/NoteList.jsx'
 import { notesService } from '../services/note.service.js'
+import { NoteList } from '../cmps/NoteList.jsx'
+import { NoteFilter } from '../cmps/NoteFilter.jsx'
+import { NoteInput } from '../cmps/NoteInput.jsx'
+
+const { useState, useEffect } = React
+const { Link } = ReactRouterDOM
 
 export function NoteIndex() {
   const [notes, setNotes] = useState([])
@@ -37,7 +39,7 @@ export function NoteIndex() {
   return (
     <section className="note-container">
       <NoteFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-      <NoteForm />
+      <NoteInput />
       <NoteList notes={notes} onRemoveNote={onRemoveNote} />
     </section>
   )

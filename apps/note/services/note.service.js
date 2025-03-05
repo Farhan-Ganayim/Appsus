@@ -40,15 +40,15 @@ function save(note) {
   }
 }
 
-function getEmptyNote(type = '', backgroundColor = '', info = '') {
+function getEmptyNote(type = '', backgroundColor = '', info = '', txt = '') {
   return {
-    createdAt: 1112222,
-    type: 'NoteTxt',
+    id: '',
+    type: NoteTxt,
     isPinned: false,
     style: {
       backgroundColor: '#00d',
     },
-    info: {},
+    info: { txt: '' },
   }
 }
 
@@ -74,11 +74,10 @@ function _createNotes() {
     {
       id: 'n102',
       createdAt: 1112226763,
-      type: 'NoteImg',
+      type: 'NoteTxt',
       isPinned: false,
       info: {
-        url: 'assets/img/15.jpg',
-        title: 'Bobi and Me',
+        txt: 'Fullstack Me Baby!',
       },
       style: {
         backgroundColor: '#00d',
@@ -100,7 +99,7 @@ function _createNotes() {
     {
       id: 'n104',
       createdAt: 1112222,
-      type: 'NoteTxt',
+      type: 'NoteImg',
       isPinned: true,
       style: {
         backgroundColor: '#00d',
@@ -108,15 +107,18 @@ function _createNotes() {
       info: {
         txt: 'Fullstack Me Baby!',
       },
+      info: {
+        url: 'assets/img/15.jpg',
+        title: 'Bobi and Me',
+      },
     },
     {
       id: 'n105',
       createdAt: 11122333523,
-      type: 'NoteImg',
+      type: 'NoteTxt',
       isPinned: false,
       info: {
-        url: 'assets/img/15.jpg',
-        title: 'Bobi and Me',
+        txt: 'Fullstack Me Baby!',
       },
       style: {
         backgroundColor: '#00d',

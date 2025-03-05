@@ -3,8 +3,8 @@ export function NoteImg({ note }) {
 
   return (
     <section>
-      <h2>{info.title}</h2>
-      <img className="note-img" src={info.url} alt="" />
+      <img src={info.url} alt="" />
+      <h4>{info.title}</h4>
     </section>
   )
 }

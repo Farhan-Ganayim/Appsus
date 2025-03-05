@@ -1,8 +1,9 @@
+import { notesService } from '../services/note.service.js'
 const { useState } = React
 
 const noteTypes = ['text', 'image', 'todos']
 
-export function NoteForm() {
+export function NoteInput() {
   const [someValue, setSomeValue] = useState(noteTypes[0])
   const [userInput, setUserInput] = useState('')
 
@@ -16,20 +17,20 @@ export function NoteForm() {
   }
 
   return (
-    <section className="note-form" style={{ border: '1px solid red' }}>
+    <section className="note-input">
       <div className="items-container">
         <input
           onChange={onHandleChange}
           value={userInput}
           type="text"
-          placeholder={`Enter ${someValue.toUpperCase()} URL`}
+          placeholder={`Enter ${someValue.toUpperCase()}`}
         />
 
-        {noteTypes.map((noteType) => (
+        {/* {noteTypes.map((noteType) => (
           <button key={noteType} onClick={() => onSetNoteType(noteType)}>
             {noteType}
           </button>
-        ))}
+        ))} */}
       </div>
     </section>
   )
