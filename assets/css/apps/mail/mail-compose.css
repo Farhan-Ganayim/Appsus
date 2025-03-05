@@ -71,9 +71,10 @@
 
             .send-btn {
                 padding: .8em 1.5em;
-                background-color: #a8c7fa;
+                background-color: #0b57d0;
                 border: none;
-                border-radius: 1em;
+                border-radius: 1.7em;
+                color: #fff;
 
             }
 
