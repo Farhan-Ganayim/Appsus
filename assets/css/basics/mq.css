@@ -105,6 +105,7 @@
 
             .mobile-folders.open {
                 transform: translateX(0);
+                left: 0;
             }
 
             .mobile-overlay {
