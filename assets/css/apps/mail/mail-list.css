@@ -22,6 +22,7 @@
 }
 
 .mail-preview {
+    /* background-color: #fff; */
     cursor: pointer;
     font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     .from-col{
