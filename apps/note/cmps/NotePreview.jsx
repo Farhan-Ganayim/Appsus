@@ -22,5 +22,5 @@ export function NotePreview({ note, txt, noteType }) {
     }
   }
 
-  return <section className="note-prev">{getNoteToRender()}</section>
+  return getNoteToRender()
 }

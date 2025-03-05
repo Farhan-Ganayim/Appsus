@@ -175,6 +175,83 @@ function _createNotes() {
         ],
       },
     },
+    {
+      id: 'n110',
+      createdAt: 111222774,
+      type: 'NoteTodos',
+      isPinned: false,
+      info: {
+        title: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving license', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      },
+    },
+    {
+      id: 'n111',
+      createdAt: 11124356222,
+      type: 'NoteTxt',
+      isPinned: true,
+      style: {
+        backgroundColor: '#00d',
+      },
+      info: {
+        txt: 'Fullstack Me Baby!',
+      },
+    },
+    {
+      id: 'n112',
+      createdAt: 1112343223,
+      type: 'NoteImg',
+      isPinned: false,
+      info: {
+        url: 'assets/img/15.jpg',
+        title: 'Bobi and Me',
+      },
+      style: {
+        backgroundColor: '#00d',
+      },
+    },
+    {
+      id: 'n113',
+      createdAt: 111224524,
+      type: 'NoteTodos',
+      isPinned: false,
+      info: {
+        title: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving license', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      },
+    },
+    {
+      id: 'n114',
+      createdAt: 1112343223,
+      type: 'NoteImg',
+      isPinned: false,
+      info: {
+        url: 'assets/img/15.jpg',
+        title: 'Bobi and Me',
+      },
+      style: {
+        backgroundColor: '#00d',
+      },
+    },
+    {
+      id: 'n115',
+      createdAt: 111224524,
+      type: 'NoteTodos',
+      isPinned: false,
+      info: {
+        title: 'Get my stuff together',
+        todos: [
+          { txt: 'Driving license', doneAt: null },
+          { txt: 'Coding power', doneAt: 187111111 },
+        ],
+      },
+    },
   ]
   utilService.saveToStorage(NOTE_KEY, notes)
 }

@@ -1,1 +1,5 @@
 /* note index css */
+.note-container {
+  margin: 1em;
+  padding: 1em;
+}
