@@ -2,14 +2,20 @@
 
     .mail-folders {
         list-style: none;
+        padding-inline-start: 10px;
         /* gap: 1.5em; */
         /* font-size: large; */
 
         button {
+            width:8.5em;
             gap: 1em;
             background-color: #fff;
             border: none;
             font-size: 1em;
+        }
+        button.curr-folder{
+            background-color: #d3e3fd;
+            border-radius: 1em;
         }
     }
 }
