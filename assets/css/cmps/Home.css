@@ -51,6 +51,9 @@
             max-width: 60vw;
         }
     }
+    .home .box {
+        max-width: 80px;
+    }
 
     .home .box-container {
         flex-direction: column;
