@@ -1,6 +1,5 @@
 
 export function MailFolderList({ currFolder, onSelectMailFolder }) {
-console.log('CCCCCCCCCCCCCCC',currFolder);
 
     return (
         <div className="mail-folders-container">
@@ -24,7 +23,6 @@ console.log('CCCCCCCCCCCCCCC',currFolder);
                         onClick={() => onSelectMailFolder('sent')}>
                         <i className="fa-regular fa-paper-plane"></i> <span>Sent</span>
                     </button>
-
                 </li>
                 <li>
                     <button
