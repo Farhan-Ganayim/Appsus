@@ -17,7 +17,7 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
             <form >
                 {/* <label htmlFor="searchTxt"></label> */}
                 <div className="search-container">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                     <input
                         id="searchTxt"
                         type="text"
