@@ -1,16 +1,13 @@
 import { notesService } from '../services/note.service.js'
-import { surveyService } from '../services/survey.service.js'
 
 const { useState } = React
 
-const noteTypes = ['text', 'image', 'todos']
+const noteTypes = ['noteTxt', 'NoteImg', 'noteTodos']
 
 export function NoteInput() {
-  const [someValue, setSomeValue] = useState(noteTypes[0])
-  const [userInput, setUserInput] = useState('')
+  const [userInput, setUserInput] = useState(null)
 
   function onSetNoteType(noteType) {
-    console.log('noteType:', noteType)
     setSomeValue(noteType)
   }
 
@@ -25,7 +22,7 @@ export function NoteInput() {
           onChange={onHandleChange}
           value={userInput}
           type="text"
-          placeholder={`Enter ${someValue.toUpperCase()}`}
+          placeholder={`Text here`}
         />
 
         {noteTypes.map((noteType) => (

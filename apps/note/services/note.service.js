@@ -45,7 +45,7 @@ function save(note) {
 function getEmptyNote(type = '', backgroundColor = '', info = '', txt = '') {
   return {
     id: '',
-    type: NoteTxt,
+    type: 'NoteTxt',
     isPinned: false,
     style: {
       backgroundColor: '#00d',
@@ -56,6 +56,12 @@ function getEmptyNote(type = '', backgroundColor = '', info = '', txt = '') {
 
 function getDefaultFilter() {
   return { type: '', isPinned: '' }
+}
+
+function _createNote() {
+  return {
+    id: utilService.makeId,
+  }
 }
 
 function _createNotes() {
