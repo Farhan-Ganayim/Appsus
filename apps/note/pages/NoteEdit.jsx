@@ -1,14 +1,15 @@
 import { notesService } from '../services/note.service.js'
 
-const { useState, useEffect } = React
 const { useNavigate, useParams } = ReactRouterDOM
+const { useState, useEffect } = React
 
 export function NoteEdit() {
   const [noteToEdit, setNoteToEdit] = useState(notesService.getEmptyNote())
+
   console.log('NoteToEdit:', noteToEdit)
 
-  const params = useParams()
   const navigate = useNavigate()
+  const { noteId } = useParams()
 
   useEffect(() => {
     if (!noteId) return
@@ -17,47 +18,35 @@ export function NoteEdit() {
   }, [])
 
   function loadNote() {
-    notesService.get(noteId).then(setNoteToEdit)
+    notesService
+      .get(noteId)
+      .then(setNoteToEdit)
+      .catch((err) => console.log('err:', err))
   }
 
-  function onSave(ev) {
+  function onSaveNote(ev) {
+    console.log('noteToEdit:', noteToEdit)
     ev.preventDefault()
-
     notesService
       .save(noteToEdit)
-      .then(() => showSuccessMsg('Note has successfully saved!'))
-      .catch(() => showErrorMsg(`couldn't save Note`))
-      .finally(() => navigate('/Note'))
+      .then(() => navigate('/note'))
+      .catch((err) => console.log('err:', err))
   }
 
-  function handleChange({ target }) {
-    const { type, name: prop } = target
-    let { value } = target
+  function handleChange(ev) {
+    ev.preventDefault()
+    let { value } = ev.target
 
-    switch (type) {
-      case 'noteTxt':
-        value = +value
-        break
-    }
-    setNoteToEdit((prevNote) => ({ ...prevNote, [prop]: value }))
+    setNoteToEdit((prevNote) => ({ ...prevNote, info: { txt: value } }))
   }
-
-  const { info } = noteToEdit
 
   return (
     <section className="note-edit">
-      {!params.noteId}
-
-      <form onSubmit={onSave}>
-        <label className="bold-txt" htmlFor="txt">
-          text:{' '}
-        </label>
-        <input
-          onChange={handleChange}
-          value={info.txt}
-          id="text"
+      <form onSubmit={onSaveNote}>
+        <textarea
           type="text"
-          name="title"
+          value={noteToEdit.info.txt}
+          onChange={handleChange}
         />
         <button>Save</button>
       </form>
