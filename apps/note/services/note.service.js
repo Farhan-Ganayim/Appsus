@@ -45,12 +45,12 @@ function save(note) {
 function getEmptyNote(type = '', backgroundColor = '', info = '', txt = '') {
   return {
     id: '',
-    type: 'NoteTxt',
+    type: '',
     isPinned: false,
     style: {
       backgroundColor: '#00d',
     },
-    info: { txt: '' },
+    info: { title: '', txt: '', url: '' },
   }
 }
 

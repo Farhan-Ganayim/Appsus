@@ -36,18 +36,35 @@ export function NoteEdit() {
   function handleChange(ev) {
     ev.preventDefault()
     let { value } = ev.target
+    switch (ev.type) {
+      case 'text':
+        value = +value
+        break
+      case 'title':
+        value = +value
+        break
 
-    setNoteToEdit((prevNote) => ({ ...prevNote, info: { txt: value } }))
+      default:
+        break
+    }
+    setNoteToEdit((prevNote) => ({
+      ...prevNote,
+      info: { txt: value },
+    }))
   }
 
   return (
     <section className="note-edit">
       <form onSubmit={onSaveNote}>
-        <textarea
+        <textArea
           type="text"
+          name="title"
           value={noteToEdit.info.txt}
           onChange={handleChange}
+          row={20}
+          col={4}
         />
+
         <button>Save</button>
       </form>
     </section>

@@ -2,10 +2,14 @@ import { notesService } from '../services/note.service.js'
 
 const { useState } = React
 
-const noteTypes = ['noteTxt', 'NoteImg', 'noteTodos']
+const noteTypes = [
+  <span className="fa-regular fa-file-lines"></span>,
+  <span className="fa-solid fa-rectangle-list"></span>,
+  <span className="fa-solid fa-image"></span>,
+]
 
 export function NoteInput() {
-  const [userInput, setUserInput] = useState(null)
+  const [userInput, setUserInput] = useState('')
 
   function onSetNoteType(noteType) {
     setSomeValue(noteType)
