@@ -5,7 +5,7 @@
         place-self: center;
         width: 75vw;
         border-collapse: collapse;
-        background-color:#f2f7fc;
+        background-color: #f2f7fc;
 
         th {
             padding: .5em;
@@ -22,11 +22,11 @@
 }
 
 .mail-preview {
-    /* background-color: #fff; */
     cursor: pointer;
-    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    .from-col{
-        font-weight:bold;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+
+    .from-col {
+        font-weight: bold;
     }
 
     .subject-col {
@@ -42,17 +42,23 @@
     .date-col {
         text-align: center;
     }
+
     .stars-col {
-    
+
         .star-icon {
             font-size: 1.4em;
         }
-    
+
         .star-icon.starred {
             color: gold;
         }
     }
 }
+.mail-preview.read {
+    background-color: white;
+
+}
+
 
 
 /* .from-col {} */

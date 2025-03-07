@@ -6,7 +6,6 @@ import { mailService } from "../services/mail.service.js"
 
 export function MailPreview({ mail, onSelectMail }) {
 
-    // console.log(mail)
     const [isStarred, setIsStarred] = useState(mail.isStarred || false)
     const dateFormatted = utilService.getFormattedDate(mail.createdAt)
 
@@ -25,7 +24,9 @@ export function MailPreview({ mail, onSelectMail }) {
     }
 
     return (
-        <tr className="mail-preview" onClick={() => onSelectMail(mail.id)}>
+        <tr
+            className={`mail-preview ${mail.isRead ? 'read' : 'unread'}`}
+            onClick={() => onSelectMail(mail.id)}>
             <td className="stars-col" onClick={onToggleStarred}>
                 <span className={`star-icon ${isStarred ? 'starred' : ''}`} >
                     {isStarred ? '★' : '☆'}

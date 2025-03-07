@@ -6,8 +6,6 @@ const { useParams, useNavigate, Link } = ReactRouterDOM
 
 export function MailDetails({ mailId, onBack, onMailDeleted }) {
 
-    // const params = useParams()
-    // console.log('hhhhhhhhhhhhh', params);
     const [mail, setMail] = useState(null)
 
     useEffect(() => {
@@ -16,11 +14,17 @@ export function MailDetails({ mailId, onBack, onMailDeleted }) {
             mailService.getById(mailId)
 
                 .then(mail => {
-                    setMail(mail)
+                    mail.isRead = true
+                    mailService.save(mail)
+                        .then(mail => {
+                            setMail(mail)
+                        })
                 })
                 .catch(err => {
                     console.error('Error in loading mail:', err)
                 })
+            console.log('Hooooon', mailId)
+
         }
     }, [mailId])
 
