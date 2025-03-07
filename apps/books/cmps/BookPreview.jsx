@@ -20,11 +20,13 @@ export function BookPreview({ book, onRemoveBook }) {
     return (
 
         <article className="book-card">
+            <Link to={`/books/${book.id}`}>
             <img
                 className="book-card-img"
                 src={book.thumbnail}
                 alt={book.title}
             />
+            </Link>
             <div className="book-card-info">
                 <h2 className="book-title">{book.title}</h2>
                 <p className="info-line book-authors">
