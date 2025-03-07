@@ -23,8 +23,6 @@ export function MailDetails({ mailId, onBack, onMailDeleted }) {
                 .catch(err => {
                     console.error('Error in loading mail:', err)
                 })
-            console.log('Hooooon', mailId)
-
         }
     }, [mailId])
 

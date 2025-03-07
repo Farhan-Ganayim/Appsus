@@ -27,7 +27,7 @@ export function MailPreview({ mail, onSelectMail }) {
         <tr
             className={`mail-preview ${mail.isRead ? 'read' : 'unread'}`}
             onClick={() => onSelectMail(mail.id)}>
-            <td className="stars-col" onClick={onToggleStarred}>
+            <td className="stars-col flex justify-center" onClick={onToggleStarred}>
                 <span className={`star-icon ${isStarred ? 'starred' : ''}`} >
                     {isStarred ? '★' : '☆'}
                 </span>

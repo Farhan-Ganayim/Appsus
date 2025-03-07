@@ -105,7 +105,10 @@ export function MailIndex() {
                     {selectedMailId ? (
                         <MailDetails
                             mailId={selectedMailId}
-                            onBack={() => setSelectedMailId(null)}
+                            onBack={() => {
+                                setSelectedMailId(null)
+                                onMailSent()
+                            }}
                             onMailDeleted={onMailDeleted}
                         />
                     ) : (
