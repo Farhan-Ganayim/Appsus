@@ -24,7 +24,6 @@
 
         .mail-table {
             tr {
-                /* margin-bottom: .5em; */
 
                 td {
                     padding: .3em;
@@ -50,7 +49,6 @@
 
     .from-col {
         grid-area: from;
-        /* font-weight: 600; */
     }
 
     .date-col {
@@ -122,7 +120,6 @@
 
     .mail-list-container {
 
-        /* margin-left: 1em; */
         .mail-table {
             width: 90vw;
         }
@@ -174,9 +171,21 @@
         position: fixed;
         top: 0;
         left: 0;
-        /* margin-bottom: 0; */
         height: 100vh;
         width: 100vw;
 
+    }
+
+    .mail-preview:hover {
+        .date-col {
+            .mail-preview-date {
+                opacity: 1;
+            }
+
+            .preview-action-buttons {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
     }
 }

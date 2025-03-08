@@ -58,7 +58,7 @@ function getDefaultFilter() {
     }
 }
 
-function getShortBody(Text, length = 12) {
+function getShortBody(Text, length = 8) {
     const words = Text.split(' ')
     const shortBody = words.slice(0, length).join(' ')
     return shortBody

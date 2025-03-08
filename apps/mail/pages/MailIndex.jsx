@@ -71,6 +71,42 @@ export function MailIndex() {
         setIsFoldersOpen(menuOpen => !menuOpen)
     }
 
+    function onDeleteMail(mailId) {
+        mailService.getById(mailId)
+            .then(mail => {
+                if (!mail.removedAt) {
+                    const removedMail = { ...mail, removedAt: Date.now() }
+                    mailService.save(removedMail)
+                        .then(() => {
+                            loadMails()
+                        })
+                } else {
+                    mailService.remove(mailId)
+                        .then(() => {
+                            loadMails()
+                        })
+                }
+            })
+            .catch(err => {
+                console.error("Error deleting mail:", err)
+            })
+    }
+
+    function onToggleIsRead(mailId) {
+        mailService.getById(mailId)
+            .then(mail => {
+                mail.isRead = !mail.isRead
+                mailService.save(mail)
+                    .then(() => {
+
+                        loadMails()
+                    })
+            })
+            .catch(err => {
+                console.error("Error changing mail status:", err)
+            })
+    }
+
     return (
         <section >
             <button
@@ -115,7 +151,9 @@ export function MailIndex() {
 
                         <MailList
                             mails={mails}
-                            onSelectMail={onSelectMail} />
+                            onSelectMail={onSelectMail}
+                            onDeleteMail={onDeleteMail}
+                            onToggleIsRead={onToggleIsRead} />
                     )}
                     {
                         isCompose && (

@@ -40,6 +40,7 @@
     }
 
     .date-col {
+        position: relative;
         text-align: center;
     }
 
@@ -54,11 +55,43 @@
         }
     }
 }
-.mail-preview.read {
-    background-color: white;
 
+.mail-preview:hover {
+    .date-col {
+        .mail-preview-date {
+            opacity: 0;
+        }
+
+        .preview-action-buttons {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    }
 }
 
+.mail-preview {
+    .date-col {
+        .preview-action-buttons {
+            position: absolute;
+            right: .8em;
+            bottom: .2em;
+            display: flex;
+            opacity: 0;
+            z-index: 10;
 
+            button {
+                font-size: 75%;
+                border-radius: 50%;
+                background-color: #dde0de;
+            }
+            button:hover{
+                
+                background-color: #bfc2c0;
+            }
+        }
+    }
+}
 
-/* .from-col {} */
+.mail-preview.read {
+    background-color: white;
+}

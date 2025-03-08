@@ -1,6 +1,6 @@
 import { MailPreview } from "./MailPreview.jsx"
 
-export function MailList({ mails, onSelectMail }) {
+export function MailList({ mails, onSelectMail, onDeleteMail, onToggleIsRead }) {
 
     if (!mails) return <div className="mail-list">No mails to show</div>
     return (
@@ -16,7 +16,12 @@ export function MailList({ mails, onSelectMail }) {
                 </thead> */}
                 <tbody>
                     {mails.map(mail => (
-                        <MailPreview mail={mail} key={mail.id} onSelectMail={onSelectMail} />
+                        <MailPreview
+                            mail={mail}
+                            key={mail.id}
+                            onSelectMail={onSelectMail}
+                            onDeleteMail={onDeleteMail}
+                            onToggleIsRead={onToggleIsRead} />
                     ))}
                 </tbody>
             </table>
