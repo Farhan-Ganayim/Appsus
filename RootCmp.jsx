@@ -5,13 +5,16 @@ import { AppHeader } from './cmps/AppHeader.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { About } from './pages/About.jsx'
 import { Home } from './pages/Home.jsx'
+
 import { MailIndex } from './apps/mail/pages/MailIndex.jsx'
-import { NoteIndex } from './apps/note/pages/NoteIndex.jsx'
 import { MailDetails } from './apps/mail/pages/MailDetails.jsx'
+
+import { NoteIndex } from './apps/note/pages/NoteIndex.jsx'
+import { NoteEdit } from './apps/note/pages/NoteEdit.jsx'
+
 import { BookIndex } from './apps/books/pages/BookIndex.jsx'
 import { BookDetails } from './apps/books/cmps/BookDetails.jsx'
 import { BookEdit } from './apps/books/pages/BookEdit.jsx'
-import { NoteEdit } from './apps/note/pages/NoteEdit.jsx'
 
 export function RootCmp() {
   return (
@@ -23,6 +26,7 @@ export function RootCmp() {
           <Route path="/about" element={<About />} />
           <Route path="/mail" element={<MailIndex />} />
           <Route path="/mail/:mailId" element={<MailDetails />} />
+
           <Route path="/note" element={<NoteIndex />} />
           <Route path="/note/edit/:noteId" element={<NoteEdit />} />
 

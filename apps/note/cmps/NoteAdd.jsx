@@ -8,7 +8,7 @@ const noteTypes = [
   <span className="fa-solid fa-image"></span>,
 ]
 
-export function NoteInput() {
+export function NoteAdd() {
   const [userInput, setUserInput] = useState('')
 
   function onSetNoteType(noteType) {

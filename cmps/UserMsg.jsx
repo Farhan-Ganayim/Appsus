@@ -2,7 +2,6 @@ import { eventBusService } from '../services/event-bus.service.js'
 const { useState, useEffect, useRef } = React
 
 export function UserMsg() {
-
   const [msg, setMsg] = useState(null)
   const timeoutIdRef = useRef()
 
@@ -21,7 +20,7 @@ export function UserMsg() {
   function closeMsg() {
     setMsg(null)
   }
-  const className = (msg)? `${msg.type} open` : '' 
+  const className = msg ? `${msg.type} open` : ''
   return (
     <section className={`user-msg ${className}`}>
       <button onClick={closeMsg}>x</button>
@@ -29,4 +28,3 @@ export function UserMsg() {
     </section>
   )
 }
-

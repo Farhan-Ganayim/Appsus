@@ -1,6 +1,6 @@
-import { NoteTxt } from './NoteTxt.jsx'
-import { NoteImg } from './NoteImg.jsx'
-import { NoteTodos } from './NoteTodos.jsx'
+import { NoteTxt } from './noteType/NoteTxt.jsx'
+import { NoteImg } from './noteType/NoteImg.jsx'
+import { NoteTodos } from './noteType/NoteTodos.jsx'
 
 export function NotePreview({ note, txt, noteType }) {
   const getNoteToRender = () => {

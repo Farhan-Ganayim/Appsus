@@ -1,7 +1,7 @@
 import { notesService } from '../services/note.service.js'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { NoteFilter } from '../cmps/NoteFilter.jsx'
-import { NoteInput } from '../cmps/NoteInput.jsx'
+import { NoteAdd } from '../cmps/NoteAdd.jsx'
 
 const { useState, useEffect } = React
 const { Link } = ReactRouterDOM
@@ -39,7 +39,7 @@ export function NoteIndex() {
   return (
     <section className="note-container">
       <NoteFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-      <NoteInput />
+      <NoteAdd />
       <NoteList notes={notes} onRemoveNote={onRemoveNote} />
     </section>
   )
