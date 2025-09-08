@@ -1,12 +1,12 @@
 import { mailService } from "../services/mail.service.js"
-import { utilService } from "../../../services/util.service.js"
+// import { utilService } from "../../../services/util.service.js"
 
 const { useState } = React
 
 export function MailCompose({ onClose, onMailSent }) {
 
     const [mailToCompose, setMailToCompose] = useState(mailService.getEmptyMail())
-    console.log('CCCCCCCCCCCCCCC', mailToCompose)
+    console.log("🚀 ~ MailCompose ~ mailToCompose:", mailToCompose)
 
     function handleChange({ target }) {
         let { name, value } = target
