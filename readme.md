@@ -2,7 +2,7 @@
 
 [Live Demo on GitHub Pages](https://farhan-ganayim.github.io/Appsus/)
 
-![Appsus Screenshot](assets/images/app-screenshot.png)
+![Appsus Screenshot](assets/img/Screenshot-mail.png)
 
 Appsus is a lightweight, multi-functional web application that integrates three core features: **Mail**, **Notes**, and **Books**. It is designed to run entirely in the browser using local data storage, making it simple and easy to use without requiring any backend or external dependencies.
 
